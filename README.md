@@ -1,29 +1,47 @@
-**MATS** is a unified Python library that combines AI tools, model downloading, saving/loading, and dataset access from multiple sources such as Kaggle and Hugging Face.
+# MATS Lab
 
-## Features
-- Download datasets from Kaggle
-- Load models and tokenizers from Hugging Face
-- Save/load models (PyTorch, Sklearn)
+**MATS Lab** (Merged AI Tools System) is a unified Python library that simplifies working with all major AI tools, models, and datasets.  
+It offers a clean, human-readable interface to download, run, fine-tune, and deploy models from platforms like Hugging Face and Kaggle, with built-in support for training, compression, and optimization.
 
-## Installation
+---
+
+##  Features
+
+-  Simple and natural syntax inspired by English
+-  Load any pretrained model from Hugging Face using only its model ID
+-  Download any dataset from Kaggle or Hugging Face by ID
+-  Automatically selects backend framework (PyTorch, TensorFlow, or scikit-learn)
+-  Unified interface for inference and prompt-based tasks
+-  Customize model parameters like temperature, max tokens, top-k, etc.
+-  Control GPU/CPU memory usage during inference
+-  Train your own models easily with built-in functions
+-  Support for model compression techniques like quantization, QLoRA, etc.
+-  CLI tool to run MATS from the terminal
+
+---
+
+##  Supported Libraries
+
+MATS Lab integrates with the following major Python AI libraries:
+
+- **PyTorch**
+- **TensorFlow**
+- **scikit-learn**
+- **Transformers (Hugging Face)**
+- **Datasets (Hugging Face Datasets)**
+- **Kaggle**
+- **PEFT (Parameter-Efficient Fine-Tuning)**
+- **NumPy**
+- **Matplotlib / Seaborn (for optional visualization)**
+
+---
+
+## 👨‍💻 About the Developer
+
+Assem Sabry is a 17-year-old AI Engineer from Egypt, passionate about building accessible and developer-friendly machine learning tools. He is the creator of MATS Lab and actively works on merging advanced AI technologies into a unified and simplified interface. Learn more at [assemsabry.netlify.app](https://assemsabry.netlify.app/).
+
+
+##  Installation
+
 ```bash
-pip install mats
-```
-
-## Usage
-```python
-from mats import from_kaggle, from_huggingface, save_model, load_model
-
-# Download a dataset
-from_kaggle("zynicide/wine-reviews")
-
-# Load a Hugging Face model
-gpt2, tokenizer = from_huggingface("gpt2")
-
-# Save and load model
-save_model(gpt2, "models/gpt2.pth")
-model = load_model(lambda: GPT2LMHeadModel.from_pretrained("gpt2"), "models/gpt2.pth")
-```
-
-## Author
-Assem Sabry
+pip install mats_lab
